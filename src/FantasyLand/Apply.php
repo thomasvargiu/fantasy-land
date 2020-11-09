@@ -7,9 +7,9 @@ namespace FunctionalPHP\FantasyLand;
 interface Apply extends Functor
 {
     /**
-     * @param Apply $b
+     * @param Apply $applicative
      *
      * @return Apply
      */
-    public function ap(Apply $b): Apply;
+    public function ap(Apply $applicative): Apply;
 }

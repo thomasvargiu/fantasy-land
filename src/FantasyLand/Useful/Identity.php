@@ -31,9 +31,9 @@ class Identity implements FantasyLand\Monad
     /**
      * @inheritdocus
      */
-    public function map(callable $transformation): FantasyLand\Functor
+    public function map(callable $function): FantasyLand\Functor
     {
-        return static::of($this->bind($transformation));
+        return static::of($this->bind($function));
     }
 
     /**
@@ -47,8 +47,8 @@ class Identity implements FantasyLand\Monad
     /**
      * @inheritdoc
      */
-    public function bind(callable $transformation)
+    public function bind(callable $function)
     {
-        return $transformation($this->value);
+        return $function($this->value);
     }
 }
